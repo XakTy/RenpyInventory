@@ -71,21 +71,14 @@ init:
                                 for x in range(0, 5):
                                     text " " #пробелы между иконками по горизонтали
                                     # индекс ячейки
-                                    $ i = x + y * 5
-                                    # если не за грницами списка предметов
-                                    # if i < len(inventory.items):
+                                    $ i = x + y
                                     button:
                                         xpos 60
                                         text(" ")
                                         idle_background "icon.png" xmaximum 150 ymaximum 135
                                         hover_background "icon_hover.png"
-                                        xmargin 0 ymargin 0
-                                        xpadding 0 ypadding 0
                                         # кликабельны только очертания предмета, не пустота
                                         focus_mask True
-                                        # размеры предмета
-                                        minimum (15, 15)
-                                        maximum (30, 30)
                                         if i < len(inventory.items):
                                             add inventory.items[i].Avatar() size(90,90) xpos 38 ypos 38 # картинка предмета
                                             action Function(inventory.items[i].Show) # Это ждет нажатия
